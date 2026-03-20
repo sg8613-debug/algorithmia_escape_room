@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Algorithmia Escape Room — Hogwarts AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ANIMATED STAR BACKGROUND -->
+  <div class="stars-bg" id="starsBg"></div>
+
+  <!-- CONGRATULATIONS SCREEN (shown on full escape) -->
+  <div class="congrats-screen" id="congratsScreen">
+    <div class="congrats-rune">🧙‍♂️</div>
+    <div class="congrats-title">You Have Escaped!</div>
+    <div class="congrats-sub">All four houses have been vanquished by your algorithmic sorcery</div>
+    <div class="congrats-houses">🦁 🦅 🦡 🐍</div>
+    <div class="final-score" id="finalScore">Score: 0</div>
+    <button class="btn-restart" onclick="restartGame()">✦ Begin Again ✦</button>
+  </div>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="candles-row" id="candlesRow"></div>
+    <div class="title-main">✦ Algorithmia Escape ✦</div>
+    <div class="title-sub">A Hogwarts AI Escape Room</div>
+  </div>
+
+  <!-- AGENT SELECTOR -->
+  <div class="agent-section">
+    <div class="agent-label">Choose your agent</div>
+    <div style="margin-bottom:10px;">
+      <span class="agent-avatar" id="agentAvatar">🦉</span>
+    </div>
+    <div class="agent-btns">
+      <button class="agent-btn active" id="btnOwl" onclick="selectAgent('owl')">🦉 Magical Owl</button>
+      <button class="agent-btn" id="btnWizard" onclick="selectAgent('wizard')">🧙‍♂️ Wizard on Broom</button>
+    </div>
+  </div>
+
+  <!-- SCORE DISPLAY -->
+  <div class="score-bar">✦ Points: <span id="scoreDisplay">0</span></div>
+
+  <!-- HOUSE PROGRESS TRACKER -->
+  <div class="progress-track">
+    <div class="house-item">
+      <div class="house-pip active" id="pip0">🦁</div>
+      <div class="house-name">GRYFFINDOR</div>
+    </div>
+    <div class="pip-connector" id="conn0"></div>
+    <div class="house-item">
+      <div class="house-pip locked" id="pip1">🦅</div>
+      <div class="house-name">RAVENCLAW</div>
+    </div>
+    <div class="pip-connector" id="conn1"></div>
+    <div class="house-item">
+      <div class="house-pip locked" id="pip2">🦡</div>
+      <div class="house-name">HUFFLEPUFF</div>
+    </div>
+    <div class="pip-connector" id="conn2"></div>
+    <div class="house-item">
+      <div class="house-pip locked" id="pip3">🐍</div>
+      <div class="house-name">SLYTHERIN</div>
+    </div>
+  </div>
+
+  <!-- MAIN GAME ROOM (dynamically rendered) -->
+  <div class="room-display" id="roomDisplay"></div>
+
+  <!-- JAVASCRIPT MODULES -->
+  <script src="js/game.js"></script>
+  <script src="js/bfs.js"></script>
+  <script src="js/dfs.js"></script>
+  <script src="js/astar.js"></script>
+  <script src="js/minimax.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
